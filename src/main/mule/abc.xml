@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b43b14c8-10a5-4d73-9d41-60c8342bf0c9" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="abcFlow" doc:id="75d3b1a5-7f85-4010-8885-229306d46c53" >
+		<http:listener doc:name="Listener" doc:id="d576ecf3-cc18-488b-9bfd-903e5bf06074" config-ref="HTTP_Listener_config" path="/adi"/>
+		<set-payload value="let us learn" doc:name="Set Payload" doc:id="f73c1b92-b98d-4f3b-b558-96552d03fb60" />
+	</flow>
+</mule>
